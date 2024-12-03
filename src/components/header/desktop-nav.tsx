@@ -1,13 +1,13 @@
-'use client';
-import * as React from 'react';
-import { Button } from '@/components/ui/button';
+"use client";
+import * as React from "react";
+import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
-} from '@/components/ui/navigation-menu';
-import Image from 'next/image';
-import Link from 'next/link';
+} from "@/components/ui/navigation-menu";
+import Image from "next/image";
+import Link from "next/link";
 
 interface NavigationItem {
   title: string;
@@ -16,34 +16,34 @@ interface NavigationItem {
 
 const navigationMenu: NavigationItem[] = [
   {
-    title: 'Home',
-    href: 'technologies',
+    title: "Home",
+    href: "/",
   },
   {
-    title: 'Sobre nós',
-    href: 'clients',
+    title: "Sobre nós",
+    href: "clients",
   },
   {
-    title: 'Planos',
-    href: '/about-us',
+    title: "Planos",
+    href: "/about-us",
   },
 ];
 
-export default function DesktopNav():JSX.Element {
+export default function DesktopNav(): JSX.Element {
   const [isVisible, setIsVisible] = React.useState(true);
 
   const controlNavbar = () => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       setIsVisible(window.scrollY <= 100);
     }
   };
 
   React.useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', controlNavbar);
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar);
 
       return () => {
-        window.removeEventListener('scroll', controlNavbar);
+        window.removeEventListener("scroll", controlNavbar);
       };
     }
   }, []);
@@ -51,16 +51,16 @@ export default function DesktopNav():JSX.Element {
   return (
     <div
       className={`w-full flex h-20 items-center justify-between fixed bg-white shadow-md transition-transform duration-300 ease-in-out z-50 ${
-        isVisible ? 'translate-y-0' : '-translate-y-full'
+        isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
       <div className="flex items-center ml-5">
         <Link href="/" className="flex items-center">
           <Image
             alt="Queiroz Fit"
-            src={'/image/logo-queiroz.png'}
+            src={"/image/logo-queiroz.png"}
             height={40}
-            width={156}
+            width={176}
           />
         </Link>
       </div>

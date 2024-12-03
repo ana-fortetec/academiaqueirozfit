@@ -21,7 +21,7 @@ interface NavigationItem {
 const navigationMenu: NavigationItem[] = [
   {
     title: 'Home',
-    href: 'technologies',
+    href: '/',
   },
   {
     title: 'Sobre nós',
