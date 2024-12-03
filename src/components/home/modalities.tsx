@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { Button } from "../ui/button";
 import Image from "next/image";
 
@@ -35,7 +36,7 @@ export default function Modalities(): JSX.Element {
         </h1>
       </div>
       <div className="text-center mt-4">
-        <p>Escolha a modalidade que mais se adequa aos seus objetivos!</p>
+        <p>Escolha a modalidade que mais se adequa aos seus objetivos !</p>
       </div>
       <div className="flex flex-wrap justify-center gap-4 mt-8">
         {listCard.map((item, index) => (
@@ -50,8 +51,10 @@ export default function Modalities(): JSX.Element {
         ))}
       </div>
       <div className="text-center mt-8 pb-10">
-        <Button className="bg-[#FF4500] hover:bg-[#FF4500]/90 text-white uppercase px-8 py-6 text-base rounded-full w-full max-w-[300px]">
-          Confira Nossos Horários
+        <Button className="bg-[#FF4500] hover:bg-[#FF4500]/90 text-white uppercase px-8 py-6 text-xs md:text-base rounded-full w-full max-w-[300px]">
+          <Link href="https://wa.me/55999991443864">
+            Confira Nossos Horários
+          </Link>
         </Button>
       </div>
     </section>

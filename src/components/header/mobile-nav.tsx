@@ -1,17 +1,16 @@
-'use client';
-import React from 'react';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu } from 'lucide-react';
-import Link from 'next/link';
-import Image from 'next/image';
-
-import { Button } from '@/components/ui/button';
+"use client";
+import React from "react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
-} from '@/components/ui/navigation-menu';
-import { useRouter } from 'next/navigation';
+} from "@/components/ui/navigation-menu";
+import { useRouter } from "next/navigation";
 
 interface NavigationItem {
   title: string;
@@ -19,18 +18,9 @@ interface NavigationItem {
 }
 
 const navigationMenu: NavigationItem[] = [
-  {
-    title: 'Home',
-    href: '/',
-  },
-  {
-    title: 'Sobre nós',
-    href: 'clients',
-  },
-  {
-    title: 'Planos',
-    href: '/about-us',
-  },
+  { title: "Home", href: "/" },
+  { title: "Sobre nós", href: "clients" },
+  { title: "Planos", href: "/plans" },
 ];
 
 export function MobileNav() {
@@ -40,23 +30,22 @@ export function MobileNav() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const controlNavbar = () => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       if (window.scrollY > lastScrollY) {
         setIsVisible(false);
       } else {
         setIsVisible(true);
       }
-
       setLastScrollY(window.scrollY);
     }
   };
 
   React.useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', controlNavbar);
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar);
 
       return () => {
-        window.removeEventListener('scroll', controlNavbar);
+        window.removeEventListener("scroll", controlNavbar);
       };
     }
   }, [lastScrollY]);
@@ -69,14 +58,14 @@ export function MobileNav() {
   return (
     <div
       className={`w-full flex h-20 items-center justify-between px-3 fixed bg-white shadow-md transition-transform md:hidden duration-300 ease-in-out  ${
-        isVisible ? 'translate-y-0' : '-translate-y-full'
+        isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
       <div className="flex items-center">
         <Link href="/" className="flex items-center space-x-2">
           <Image
             alt="Forte Tecnologias"
-            src={'/image/logo-queiroz.png'}
+            src={"/image/logo-queiroz.png"}
             height={40}
             width={150}
           />
@@ -107,11 +96,10 @@ export function MobileNav() {
                 ))}
               </NavigationMenuList>
             </NavigationMenu>
-            <Button
-              className="w-full py-4"
-              onClick={() => handleNavigation('/contact')}
-            >
-              Agende uma ligação
+            <Button className="w-full py-4">
+              <Link href="https://wa.me/55999991443864" passHref>
+                Fale conosco
+              </Link>
             </Button>
           </nav>
         </SheetContent>

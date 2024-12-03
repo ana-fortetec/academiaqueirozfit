@@ -25,7 +25,7 @@ const navigationMenu: NavigationItem[] = [
   },
   {
     title: "Planos",
-    href: "/about-us",
+    href: "/plans",
   },
 ];
 
@@ -81,7 +81,7 @@ export default function DesktopNav(): JSX.Element {
         </NavigationMenu>
         <div>
           <Button className="mr-4 text-base bg-primary">
-            <Link href="/contact">Agende uma ligação</Link>
+            <Link href="https://wa.me/55999991443864">Fale conosco</Link>
           </Button>
         </div>
       </nav>

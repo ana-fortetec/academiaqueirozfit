@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FormEmail } from "./form-email";
-import { Instagram, Facebook, PhoneIcon as WhatsApp } from "lucide-react";
+import { Instagram, PhoneIcon as WhatsApp } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -16,7 +16,7 @@ export default function Footer() {
             />
 
             <div>
-              <h2 className="font-semibold text-xl mb-3">
+              <h2 className="font-semibold text-lg md:text-xl mb-3">
                 Horário de Funcionamento:
               </h2>
               <p className="text-gray-300">Segunda à sexta: 05h45 às 22h</p>
@@ -24,23 +24,26 @@ export default function Footer() {
             </div>
 
             <div>
-              <h2 className="font-semibold text-xl mb-3">Endereço:</h2>
+              <h2 className="font-semibold text-lg md:text-xl mb-3">
+                Endereço:
+              </h2>
               <p className="text-gray-300">Rua Paraiba, 1688A</p>
               <p className="text-gray-300">Imperatriz - MA</p>
             </div>
 
             <div>
-              <h2 className="font-semibold text-xl mb-3">Email:</h2>
+              <h2 className="font-semibold text-lg md:text-xl mb-3">Email:</h2>
               <p className="text-gray-300">queirozfit@gmail.com</p>
             </div>
 
             <div className="flex gap-10">
-              <a href="#" className="hover:text-gray-300 transition-colors">
+              <a
+                href="https://www.instagram.com/queiroz_fit?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                className="hover:text-gray-300 transition-colors"
+              >
                 <Instagram size={24} />
               </a>
-              <a href="#" className="hover:text-gray-300 transition-colors">
-                <Facebook size={24} />
-              </a>
+
               <a href="#" className="hover:text-gray-300 transition-colors">
                 <WhatsApp size={24} />
               </a>
